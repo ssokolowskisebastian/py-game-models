@@ -19,7 +19,7 @@ def main() -> None:
             description=user["race"]["description"])
 
         player = Player.objects.create(
-            nickname=player,
+            nickname=data_player,
             email=user["email"],
             bio=user["bio"],
             race=race,
