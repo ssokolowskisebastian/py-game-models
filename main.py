@@ -17,10 +17,10 @@ def main() -> None:
                 name=user.get("guild").get("name"),
                 description=user.get("guild").get("description"))
         race, _ = Race.objects.get_or_create(
-            name=user.get("race").get("skills"),
-            description=user.get("race").get("skills"))
+            name=user.get("race").get("name"),
+            description=user.get("race").get("description"))
 
-        player = Player.objects.create(
+        player, _ = Player.objects.get_or_create(
             nickname=data_player,
             email=user.get("email"),
             bio=user.get("bio"),
